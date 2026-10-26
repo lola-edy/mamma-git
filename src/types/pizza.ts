@@ -22,5 +22,5 @@ export type EasterEgg ={
     message:string;
     requiredIds: string[];
     exact?: boolean;
-    effect: "glitter" | "flames"|"cry" |"cursed" |"zen"|"melt";
+    effect: "glitter" | "flames"|"cry" |"cursed" |"zen";
 };
