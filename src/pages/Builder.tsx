@@ -5,6 +5,7 @@ import { ingredients } from "../data/ingredients";
 import { easterEggs } from "../data/easterEggs";
 import { findEasterEgg } from "../utils/findEasterEgg";
 import { pizzas } from "../data/pizzas";
+import PizzaPreview from "../components/builder/PizzaPreview";
 
 const BASE_PRICE = 6;
 
@@ -68,6 +69,8 @@ export default function Builder() {
             </button>
           ))}
         </div>
+
+        <PizzaPreview selectedIds={selectedIds}/>
 
         <p>
           Prix préparation : {BASE_PRICE} € — Total : {total} €

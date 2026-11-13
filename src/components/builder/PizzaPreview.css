@@ -1,0 +1,27 @@
+.pizza {
+  position: relative;          /* les emojis se placent par rapport à la pizza */
+  aspect-ratio: 1;             /* toujours un carré, donc un rond parfait */
+  margin: 20px auto;
+  border-radius: 50%;          /* transforme le carré en rond */
+  background: #f6dfb0;         /* couleur de la pâte */
+  border: 10px solid #d9a35b;  /* la croûte */
+}
+
+.sauce {
+  position: absolute;
+  inset: 8%;                   /* un peu plus petit que la pâte */
+  border-radius: 50%;
+  background: #c8372d;
+  animation: pop 0.3s ease-out;
+}
+
+.topping {
+  position: absolute;
+  transform: translate(-50%, -50%); /* centre l'emoji sur sa position */
+  animation: pop 0.3s ease-out;     /* petit effet quand il apparaît */
+}
+
+@keyframes pop {
+  from { scale: 0; }
+  to   { scale: 1; }
+}
