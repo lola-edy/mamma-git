@@ -1,5 +1,6 @@
 .pizza {
   position: relative;          /* les emojis se placent par rapport à la pizza */
+  max-width: 100%;
   aspect-ratio: 1;             /* toujours un carré, donc un rond parfait */
   margin: 20px auto;
   border-radius: 50%;          /* transforme le carré en rond */
@@ -24,4 +25,32 @@
 @keyframes pop {
   from { scale: 0; }
   to   { scale: 1; }
+}
+
+.ingredient-btn {
+  margin: 4px;
+  padding: 8px 14px;
+  border: 2px solid #444;
+  border-radius: 999px;          /* forme de pilule */
+  background: transparent;
+  color: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.15s ease;    /* changement en douceur */
+}
+
+.ingredient-btn:hover {
+  border-color: #d9a35b;
+}
+
+.ingredient-btn.selected {
+  background: #d9a35b;           /* même couleur que la croûte */
+  border-color: #d9a35b;
+  color: #16171d;
+  font-weight: bold;
+  transform: scale(1.08);        /* légèrement plus gros */
+}
+
+.check {
+  margin-right: 6px;
 }

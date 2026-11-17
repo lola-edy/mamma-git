@@ -1,5 +1,6 @@
 import { pizzas } from "../data/pizzas";
 import PizzaCard from "../components/menu/PizzaCard";
+import "../components/menu/menu.css";
 
 export default function Menu() {
   return (

@@ -6,6 +6,7 @@ import { easterEggs } from "../data/easterEggs";
 import { findEasterEgg } from "../utils/findEasterEgg";
 import { pizzas } from "../data/pizzas";
 import PizzaPreview from "../components/builder/PizzaPreview";
+import IngredientButton from "../components/builder/IngredientButton";
 
 const BASE_PRICE = 6;
 
@@ -56,17 +57,13 @@ export default function Builder() {
 
         <div>
           {ingredients.map((ingredient) => (
-            <button
-              key={ingredient.id}
-              onClick={() => handleToggle(ingredient.id)}
-              style={{
-                fontWeight: selectedIds.includes(ingredient.id)
-                  ? "bold"
-                  : "normal",
-              }}
-            >
-              {ingredient.emoji} {ingredient.name}
-            </button>
+          <IngredientButton
+            key={ingredient.id}
+            ingredient={ingredient}
+            isSelected={selectedIds.includes(ingredient.id)}
+            onToggle={handleToggle}
+            />
+            
           ))}
         </div>
 

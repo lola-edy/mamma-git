@@ -19,14 +19,10 @@ export default function PizzaCard({ pizza }: PizzaCardProps) {
       <p>{pizza.description}</p>
 
       <p className="pizza-ingredients">
-        {pizzaIngredients.map(ingredient => ingredient.name).join(",")}
-          <span key={ingredient.id} title={ingredient.name}>
-            {ingredient.emoji}
-          </span>
-        ))}
+        {pizzaIngredients.map(ingredient => ingredient.name).join(", ")}
       </p>
 
-      <p className="price">{pizza.price} €</p>
+      <p className="price">{pizza.price.toFixed(2)} €</p>
     </article>
   );
 }

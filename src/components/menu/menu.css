@@ -1,0 +1,29 @@
+.pizza-list {
+  display: flex;
+  flex-wrap: wrap;         /* les cartes passent à la ligne quand il n'y a plus de place */
+  justify-content: center;
+  gap: 24px;
+}
+
+.pizza-card {
+  width: 240px;
+  padding: 16px;
+  border: 1px solid #555;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.pizza-ingredients {
+  display: flex;
+  flex-wrap: wrap;           /* passe à la ligne quand il n'y a plus de place */
+  justify-content: center;   /* centre chaque ligne */
+  gap: 4px 8px;              /* espace entre les ingrédients */
+  font-size: 0.9rem;
+  opacity: 0.7;
+  overflow-wrap: anywhere;   /* coupe un mot trop long plutôt que de déborder */
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.2rem;
+}

@@ -48,7 +48,7 @@ export default function PizzaPreview({ selectedIds , size=280}: PizzaPreviewProp
             <span
               key={`${ingredient.id}-${copyIndex}`}
               className="topping"
-              style={{ left: `${position.left}%`, top: `${position.top}%` , fontSize:`${size*0.09}px}`}}
+              style={{ left: `${position.left}%`, top: `${position.top}%` , fontSize:`${size*0.09}px`}}
             >
               {ingredient.emoji}
             </span>
