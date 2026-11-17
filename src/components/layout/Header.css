@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;  /* logo à gauche, liens à droite */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid #333;
+}
+
+.header button {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+.header .logo {
+  margin-left: 0;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.header button.active {
+  color: #d9a35b;                  /* la page actuelle */
+  border-bottom-color: #d9a35b;
+}

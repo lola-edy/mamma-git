@@ -10,7 +10,12 @@ import IngredientButton from "../components/builder/IngredientButton";
 
 const BASE_PRICE = 6;
 
-export default function Builder() {
+type BuilderProps = {
+  onDiscover: (eggId: string) => void;          // prévient App qu'un egg a été trouvé
+  onEffectChange: (isPlaying: boolean) => void; // prévient App qu'un effet s'affiche ou non
+};
+
+export default function Builder({onDiscover, onEffectChange}:BuilderProps ){
   const [selectedIds, setSelectedIds] = useState<string[]>([]); //liste des ingredients choisis
   const [isValidated, setIsValidated] = useState(false); //la personne a t'elle validée?
   const [egg, setEgg] = useState<EasterEgg | undefined>(undefined); // easter egg trouvé si il y en a un
@@ -36,17 +41,24 @@ export default function Builder() {
     }
     setIsValidated(false);
     setEgg(undefined);
+    onEffectChange(false)
   }
 
   function handleValidate() {
-    setEgg(findEasterEgg(selectedIds, easterEggs));
+    const foundEgg=findEasterEgg(selectedIds,easterEggs);
+    setEgg(foundEgg);
     setIsValidated(true);
+    if (foundEgg){
+      onDiscover(foundEgg.id);
+    }
+    onEffectChange(foundEgg !== undefined)
   }
   function handleReset() {
     //remet tout comme au depart
     setSelectedIds([]);
     setIsValidated(false);
     setEgg(undefined);
+    onEffectChange(false)
   }
 
   return (
@@ -92,7 +104,7 @@ export default function Builder() {
         )}
 
         {isValidated && !egg && !matchingPizza && (
-          <p>Ta création est prête ! 🍕</p>
+          <p className="result">Ta création est prête ! 🍕</p>
         )}
 
         {isValidated && (

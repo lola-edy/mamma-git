@@ -18,3 +18,16 @@ body {
   padding: 0 16px;
   text-align: center;
 }
+
+.secret-list {
+  list-style: none;   /* enlève les puces */
+  padding: 0;
+}
+
+.secret-list li {
+  margin: 8px 0;
+}
+
+
+.love-mode { color: #8a1c4a; }  /* texte rose foncé */
+.love-bg { position: fixed; inset: 0; background: #ffd6e7; z-index: -1; }  /* fond rose sur tout l'écran */
